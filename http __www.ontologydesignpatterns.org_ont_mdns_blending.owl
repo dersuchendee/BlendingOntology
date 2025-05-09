@@ -1,0 +1,691 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl/"
+     xml:base="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:mdns="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:schema="https://w3id.org/framester/schema/"
+     xmlns:schema1="https://w3id.org/framester/metanet/schema/"
+     xmlns:blending="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#">
+    <owl:Ontology rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl">
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl"/>
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl"/>
+        <rdfs:comment>An ontology of Conceptual Blending, based upon mDnS (mereological Descriptions and Situations), the Cognitive Perspectivisation ontology, and the MetaNet schema from the Amnestic Forgery ontology.
+It generalises the notion of metaphors as frame mappings, and uses mDnS for ground axiomatisation.
+The basic Descriptions include:
+Blending (a generic description enabling Blendable frames to be mapped by subsuming some of their components)
+Blendable (two descriptions with components that are subsumed by components in the Blending frame)
+Blended (the description that inherits components from the Blendable frames, firstly through the Blending sharable space, and eventually inheriting other components from the Blendable frames, so making it emerge a novel set of blended situations).
+Blend (the meta-description that has Blending, Blendable, and Blended has components).
+Each description d corresponds to a class of situations s_1...s_n as usual, so that each situation s_i is nClassifiedBy d, and d nClassifies (is satisfied by) some s_i.
+Components at the intensional (iComponent) and extensional (eComponent) are the mDnS vocabulary for usesConcept and isSettingFor respectively in classic DnS.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/description.owl#isSatisfiedBy -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/description.owl#isSatisfiedBy">
+        <owl:equivalentProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#nClassifies"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/description.owl#satisfies -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/description.owl#satisfies">
+        <owl:equivalentProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#nClassifiedBy"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor">
+        <owl:equivalentProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#eComponent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#blendableComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#blendableComponent">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#eComponent"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:38:28Z</dc:date>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#blendedComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#blendedComponent">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#eComponent"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:38:35Z</dc:date>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#blendingComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#blendingComponent">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#eComponent"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:38:20Z</dc:date>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#enablesBlending -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#enablesBlending">
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blending"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blendable"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#iComponent"/>
+            <rdf:Description rdf:about="https://w3id.org/framester/schema/subsumes"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#iComponentOf"/>
+        </owl:propertyChainAxiom>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:34:30Z</dc:date>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#inheritsRoleFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#inheritsRoleFrom">
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#Description"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blendable"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#iComponent"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#iComponentOf"/>
+        </owl:propertyChainAxiom>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:39:34Z</dc:date>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#eComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#eComponent"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#nClassifiedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#nClassifiedBy"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#nClassifies -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#nClassifies"/>
+    
+
+
+    <!-- https://w3id.org/framester/schema/subsumedUnder -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/framester/schema/subsumedUnder"/>
+    
+
+
+    <!-- https://w3id.org/framester/schema/subsumes -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/framester/schema/subsumes"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#Entity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description">
+        <owl:equivalentClass rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#Description"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/situation.owl#Situation -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#Situation">
+        <owl:equivalentClass rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#Situation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Blend -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Blend">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#eComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blendable"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#eComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blended"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#eComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blending"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#BlendingTheorySituation"/>
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#blendableComponent"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#blendedComponent"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#blendingComponent"/>
+        </owl:hasKey>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Crime -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Crime">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/framester/schema/FrameOccurrence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CrimeAsInfection -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CrimeAsInfection">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/framester/schema/FrameOccurrence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#HarmfulSpreading -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#HarmfulSpreading">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/framester/schema/FrameOccurrence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Infection -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Infection">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/framester/schema/FrameOccurrence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#Description -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#Description"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#Situation -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#Situation"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blendable -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blendable">
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#blendableComponent"/>
+        </owl:hasKey>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blended -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blended">
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#blendedComponent"/>
+        </owl:hasKey>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blending -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blending">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#enablesBlending"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#Description"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#blendingComponent"/>
+        </owl:hasKey>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Blend -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Blend">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blendable"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blended"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blending"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Crime -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Crime">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CrimeSeverity"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CriminalAct"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#NormViolation"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Victim"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CrimeAsInfection -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CrimeAsInfection">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CrimeSeverity"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CriminalAct"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionAgent"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionPatient"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionPopulation"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionProcess"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionSpreadRate"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Victim"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CrimePerpetrator -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CrimePerpetrator">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:30:26Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CrimeSeverity -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CrimeSeverity">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <schema:subsumedUnder rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#HarmSeverity"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:03:43Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CriminalAct -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CriminalAct">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:02:45Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#HarmSeverity -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#HarmSeverity">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:28:30Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#HarmedEntity -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#HarmedEntity">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:00:03Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#HarmfulSpreading -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#HarmfulSpreading">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#HarmedEntity"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#SpreadEvent"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#SpreadMedium"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#SpreadRate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Infection -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Infection">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionAgent"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionPatient"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionPopulation"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionProcess"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionSeverity"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionSpreadRate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionAgent -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionAgent">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:06:49Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionPatient -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionPatient">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <schema:subsumedUnder rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#HarmedEntity"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:06:29Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionPopulation -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionPopulation">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <schema:subsumedUnder rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#SpreadMedium"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:06:38Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionProcess -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionProcess">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:06:19Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionSeverity -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionSeverity">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <schema:subsumedUnder rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#HarmSeverity"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:07:02Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionSpread -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionSpread">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <schema:subsumedUnder rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#SpreadEvent"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:31:45Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionSpreadRate -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionSpreadRate">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <schema:subsumedUnder rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#SpreadRate"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:03:10Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#NormViolation -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#NormViolation">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:03:32Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#SpreadEvent -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#SpreadEvent">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:58:48Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#SpreadMedium -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#SpreadMedium">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:01:17Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#SpreadRate -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#SpreadRate">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:01:09Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Victim -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Victim">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <schema:subsumedUnder rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#HarmedEntity"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:02:50Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#crimeAsInfection_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#crimeAsInfection_1">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CrimeAsInfection"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CrimeSeverity"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CriminalAct"/>
+        <mdns:iComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#InfectionAgent"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:54:56Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#crimeAsInfectionblend_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#crimeAsInfectionblend_1">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CrimeAsInfection"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#Situation"/>
+        <blending:blendableComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#crime_1"/>
+        <blending:blendableComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#infection_1"/>
+        <blending:blendedComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#crimeAsInfection_1"/>
+        <blending:blendingComponent rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#harmfulSpreading_1"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:29:01Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#crime_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#crime_1">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Crime"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:39:18Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#harmfulSpreading_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#harmfulSpreading_1">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#HarmfulSpreading"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#infection_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#infection_1">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Infection"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:39:37Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blendable -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blendable">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#nClassifies"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blendable"/>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blended -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blended">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#nClassifies"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blended"/>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blending -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blending">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl#Description"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/mdns/mdns.owl#nClassifies"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Blending"/>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Blend">
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:29:48Z</dc:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:35:33Z</dc:date>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Crime">
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:39:47Z</dc:date>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:47:08Z</dc:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#CrimeAsInfection">
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:41:38Z</dc:date>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T15:11:43Z</dc:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#HarmfulSpreading">
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:24:56Z</dc:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:26:39Z</dc:date>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/mdns/blending.owl#Infection">
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:39:52Z</dc:date>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T14:47:27Z</dc:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aldo Gangemi</dc:creator>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
